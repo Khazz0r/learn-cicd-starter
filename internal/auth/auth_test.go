@@ -23,7 +23,7 @@ func TestGetApiKey(t *testing.T) {
 		"missing header": {
 			input:   http.Header{},
 			want:    "",
-			wantErr: false,
+			wantErr: true,
 		},
 		"malformed header": {
 			input: func() http.Header {
