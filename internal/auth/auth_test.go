@@ -5,7 +5,6 @@ import (
 	"testing"
 )
 
-// Test function for GetAPIKey
 func TestGetApiKey(t *testing.T) {
 	tests := map[string]struct {
 		input   http.Header
