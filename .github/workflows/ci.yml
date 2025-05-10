@@ -20,6 +20,12 @@ jobs:
 
       - name: Test GetApiKey function
         run: go test ./... -cover
+      
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+      
+      - name: gosec
+        run: gosec ./...
     
   Style:
     name: Style
@@ -41,4 +47,6 @@ jobs:
         run: test -z $(go fmt ./...)
       
       - name: staticcheck
-        run: test -z $(staticcheck ./...)
+        uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
