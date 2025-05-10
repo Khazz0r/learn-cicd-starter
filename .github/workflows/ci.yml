@@ -40,5 +40,5 @@ jobs:
       - name: Test if code is formatted properly
         run: test -z $(go fmt ./...)
       
-      - name: Test staticcheck
+      - name: staticcheck
         run: test -z $(staticcheck ./...)
